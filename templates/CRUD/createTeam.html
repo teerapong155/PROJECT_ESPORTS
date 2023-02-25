@@ -3,12 +3,85 @@
     <h1> สร้างทีม </h1>
     <form method="POST" enctype="multipart/form-data" class="form form-control text-primary">
         {% csrf_token %}
-        {{ form.as_table }}
+        <div class="row">
+            <div class="form-field" style="width: 250px">
+                <label>ชื่อทีม</label>{{ form.nameTeam }}
+            </div>
+            <div class="form-field" style="width: 300px">
+                <label>รูปโลโก้</label>{{ form.logo }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-field" style="width: 250px">
+                <label>ชื่อ-สกุล(ผู้เล่นคนที่1)</label>{{ form.name1 }}
+            </div>
+            <div class="form-field" style="width: 300px">
+                <label>ชื่อในเกม</label>{{ form.player1 }}
+            </div>
+            <div class="form-field" style="width: 300px">
+                <label>อีเมล</label>{{ form.email1 }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-field" style="width: 250px">
+                <label>ชื่อ-สกุล(ผู้เล่นคนที่2)</label>{{ form.name2 }}
+            </div>
+            <div class="form-field" style="width: 300px">
+                <label>ชื่อในเกม</label>{{ form.player2 }}
+            </div>
+            <div class="form-field" style="width: 300px">
+                <label>อีเมล</label>{{ form.email2 }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-field" style="width: 250px">
+                <label>ชื่อ-สกุล(ผู้เล่นคนที่3)</label>{{ form.name3 }}
+            </div>
+            <div class="form-field" style="width: 300px">
+                <label>ชื่อในเกม</label>{{ form.player3 }}
+            </div>
+            <div class="form-field" style="width: 300px">
+                <label>อีเมล</label>{{ form.email3 }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-field" style="width: 250px">
+                <label>ชื่อ-สกุล(ผู้เล่นคนที่4)</label>{{ form.name4 }}
+            </div>
+            <div class="form-field" style="width: 300px">
+                <label>ชื่อในเกม</label>{{ form.player4 }}
+            </div>
+            <div class="form-field" style="width: 300px">
+                <label>อีเมล</label>{{ form.email4 }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-field" style="width: 250px">
+                <label>ชื่อ-สกุล(ผู้เล่นคนที่5)</label>{{ form.name5 }}
+            </div>
+            <div class="form-field" style="width: 300px">
+                <label>ชื่อในเกม</label>{{ form.player5 }}
+            </div>
+            <div class="form-field" style="width: 300px">
+                <label>อีเมล</label>{{ form.email5 }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-field" style="width: 250px">
+                <label>ชื่อ-สกุล(ผู้เล่นสำรอง)</label>{{ form.name6 }}
+            </div>
+            <div class="form-field" style="width: 300px">
+                <label>ชื่อในเกม</label>{{ form.player6 }}
+            </div>
+            <div class="form-field" style="width: 300px">
+                <label>อีเมล</label>{{ form.email6 }}
+            </div>
+        </div>
         <p class="text-center">
             <button type="button" class="btn btn-secondary" onclick="history.back()">
                  <i class="fa fa-rotate-back"></i> Back
             </button>
-            <button type="submit" class="btn btn-lg btn-success">
+            <button type="submit" class="btn btn-success">
                  <i class="fa-solid fa-floppy-disk"></i> Save
             </button>
         </p>

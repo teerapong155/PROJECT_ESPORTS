@@ -1,0 +1,158 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+    <h1>ลงทะเบียนเข้าแข่งขัน</h1>
+    <div class="tbl-header">
+        <form class="table-hover rounded-3" action="form_team_db.php" method="POST" enctype="multipart/form-data" style="background-color: #E22F89; color: black;">
+            <br>
+            <div class="row"  style="margin-left:20px">
+                <div class="col">
+                    <div class="form-group">
+                        <span class="form-label font-monospace">ชื่อทีม</span>
+                        <input class="tname" type="text" name="tname">
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        <span class="form-label font-monospace">โลโก้ทีม</span>
+                        <input type="file" name="file" required>
+                    </div>
+                </div>
+            </div>
+        <br>
+            <div class="row"  style="margin-left:20px">
+                <div class="col-sm-4">
+                    <div class="form-group">
+                        <span class="form-label font-monospace">ชื่อ-สกุล(ผู้เล่นคนที่1)</span>
+                        <input type="text" name="name_1">
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="form-group">
+                        <span class="form-label font-monospace">ชื่อในเกม</span>
+                        <input type="text" name="gname_1">
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        <span class="form-label font-monospace">อีเมล</span>
+                        <input type="email" name="email_1">
+                    </div>
+                </div>
+            </div>
+         <br>
+            <div class="row"  style="margin-left:20px">
+                <div class="col-sm-4">
+                    <div class="form-group">
+                        <span class="form-label font-monospace">ชื่อ-สกุล(ผู้เล่นคนที่2)</span>
+                        <input type="text" name="name_2">
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="form-group">
+                        <span class="form-label font-monospace">ชื่อในเกม</span>
+                        <input type="text" name="gname_2">
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        <span class="form-label font-monospace">อีเมล</span>
+                        <input type="email" name="email_2">
+                    </div>
+                </div>
+            </div>
+         <br>
+            <div class="row"  style="margin-left:20px">
+                <div class="col-sm-4">
+                    <div class="form-group">
+                        <span class="form-label font-monospace">ชื่อ-สกุล(ผู้เล่นคนที่3)</span>
+                        <input type="text" name="name_3">
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="form-group">
+                        <span class="form-label font-monospace">ชื่อในเกม</span>
+                        <input type="text" name="gname_3">
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        <span class="form-label font-monospace">อีเมล</span>
+                        <input type="email" name="email_3">
+                    </div>
+                </div>
+            </div>
+         <br>
+            <div class="row"  style="margin-left:20px">
+                <div class="col-sm-4">
+                    <div class="form-group">
+                        <span class="form-label font-monospace">ชื่อ-สกุล(ผู้เล่นคนที่4)</span>
+                        <input type="text" name="name_4">
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="form-group">
+                        <span class="form-label font-monospace">ชื่อในเกม</span>
+                        <input type="text" name="gname_4">
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        <span class="form-label font-monospace">อีเมล</span>
+                        <input type="email" name="email_4">
+                    </div>
+                </div>
+            </div>
+         <br>
+            <div class="row"  style="margin-left:20px">
+                <div class="col-sm-4">
+                    <div class="form-group">
+                        <span class="form-label font-monospace">ชื่อ-สกุล(ผู้เล่นคนที่5)</span>
+                        <input type="text" name="name_5">
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="form-group">
+                        <span class="form-label font-monospace">ชื่อในเกม</span>
+                        <input type="text" name="gname_5">
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        <span class="form-label font-monospace">อีเมล</span>
+                        <input type="email" name="email_5">
+                    </div>
+                </div>
+            </div>
+         <br>
+            <div class="row"  style="margin-left:20px">
+                <div class="col-sm-4">
+                    <div class="form-group">
+                        <span class="form-label font-monospace">ชื่อ-สกุล(ผู้เล่นสำรอง)</span>
+                        <input type="text" name="name_6">
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="form-group">
+                        <span class="form-label font-monospace">ชื่อในเกม</span>
+                        <input type="text" name="gname_6">
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        <span class="form-label font-monospace">อีเมล</span>
+                        <input type="email" name="email_6">
+                    </div>
+                </div>
+            </div>
+        <br>
+          <center>
+            <div class="form-btn">
+                <button class="btn btn-secondary" name="reg_team">ลงทะเบียน</button>
+            </div>
+          </center>
+        <br>
+        </form>
+    </div>
+{% endblock %}

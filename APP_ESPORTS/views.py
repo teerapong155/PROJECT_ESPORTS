@@ -48,6 +48,9 @@ def createTeam(request):
         context = {'form': form}
         return render(request, 'CRUD/createTeam.html', context)
 
+def form_team(request):
+    return render(request,"form_team.html")
+
 
 
 

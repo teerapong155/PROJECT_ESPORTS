@@ -23,10 +23,8 @@ urlpatterns = [
     path('',views.base, name='base'),
     path('raceType',views.typeList, name='raceType'),
     path('director',views.director,name='director'),
-    path('ageCategory',views.ageCategory, name='ageCategory'),
     path('newRaceType',views.newRaceType,name='newRaceType'),
-    path('season', views.season,name='season'),
-    path('team', views.team,name='team'),
     path('createTeam',views.createTeam,name='createTeam'),
+
 
 ]
