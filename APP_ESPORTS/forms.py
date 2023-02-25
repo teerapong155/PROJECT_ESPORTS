@@ -88,7 +88,7 @@ class Season(forms.ModelForm): #ประเภทอายุแข่ง
         self.fields['name'].widget.attrs['readonly'] = True
         self.fields['desc'].widget.attrs['readonly'] = True
 
-class Team(forms.ModelForm):
+class TeamFrom(forms.ModelForm):
     class Meta:
         model = Team
         fields = ('nameTeam', 'logo','name1','name2','name3','name4','name5','name6'

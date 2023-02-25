@@ -35,9 +35,18 @@ def team(request):
     return render(request, "team.html", context)
 
 def createTeam(request):
-    createTeam = Team.objects.all().order_by()
-    context = {'createTeam': createTeam}
-    return render(request, "CRUD/createTeam.html", context)
+    if request.method == 'POST':
+        form = TeamFrom(data=request.POST, files=request.FILES)
+        if form.is_valid():
+            form.save()
+            return redirect('team')
+        else:
+            context = {'form': form}
+            return render(request, 'CRUD/createTeam.html', context)
+    else:
+        form = TeamFrom()
+        context = {'form': form}
+        return render(request, 'CRUD/createTeam.html', context)
 
 
 
