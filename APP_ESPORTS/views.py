@@ -1,24 +1,36 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 
+from APP_ESPORTS.forms import *
 from APP_ESPORTS.models import *
 
-
-# Create your views here.
-
 def typeList(request):
-    raceType = typeList.objects.all().order_by()
-    context = {'raceType': typeList}
+    typelist = TypeList.objects.all().order_by()
+    context = {'raceType': typelist}
     return render(request,"raceType.html",context)
 
 def director(request):
-    director = Director.objects.all().order_by()
-    context = {'categories':RaceType}
+    direc = Director.objects.all().order_by()
+    context = {'direc':direc}
     return render(request,"director.html",context)
+
+def ageCategory(request):
+    age = AgeCategory.objects.all().order_by()
+    context = {'age':age}
+    return render(request,"ageCategory.html",context)
+
+def season(request):
+    sea = Season.objects.all().order_by()
+    context = {'sea':sea}
+    return render(request,"season.html",context)
 
 def base(request):
     return render(request,"base.html")
 
 def newRaceType(request):
     return render(request,"CRUD/newRaceType.html")
+
+
+
+
 
 

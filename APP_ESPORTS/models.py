@@ -6,8 +6,13 @@ from django.db import models
 from django.utils import timezone
 from django.db.models import F, Sum, Count
 
+class Categories(models.Model):
+    name = models.CharField(max_length=50, default="")
+    desc = models.TextField(max_length=400, default="")
+    def __str__(self):
+        return str(self.id) + ":" + self.name
 
-class typeList(models.Model): #ประเภทการแข่ง
+class TypeList(models.Model): #ประเภทการแข่ง
     nameType = models.CharField(max_length=50, default="")
     gender = models.TextField(max_length=400, default="")
     def __str__(self):
@@ -16,11 +21,11 @@ class typeList(models.Model): #ประเภทการแข่ง
 class Director(models.Model): #กรรมการ
     name = models.CharField(max_length=50, default="")
     gender = models.TextField(max_length=40, default="")
-    birthday = models.DateTimeField(max_length=40, default="")
+    birthdate = models.DateField(default=None)
     tel = models.CharField(max_length=10, default="")
     address = models.CharField(max_length=400, default="")
     def __str__(self):
-        return self.name + ":" + self.gender + ":" + self.birthday + ":" + self.tel + ":" + self.address
+        return self.name + ":" + self.gender + ":" + str(self.birthdate) + ":" + self.tel + ":" + self.address
 
 
 
