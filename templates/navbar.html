@@ -1,0 +1,32 @@
+{% load static %}
+{% load fontawesome_5 %}
+{% fontawesome_5_static %}
+<div class="row">
+    <div class="col-10">
+        <ul class="nav justify-content-start rounded-5 ">
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'base' %}" style="color: #ffffff"><i class="fas fa-home"></i><b> หน้าหลัก</b></a>
+            </li>
+            <li class="nav-item">
+{#                <a class="nav-link" href="{% url 'delRegister' %}" style="color: #ffffff"><i class="far fa-registered"></i><b> รายวิชาที่ลงทะเบียน</b></a>#}
+            </li>
+{#
+
+            <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" style="color: #ffffff"><b>การลงทะเบียนเรียน</b></a>
+            <ul class="dropdown-menu">
+{#                <li><a class="dropdown-item" href="{% url 'enroll_in1' %}">ลงทะเบียน</a></li>#}
+{#                <li><a class="dropdown-item" href="{% url 'addRegister' %}">เพิ่มรายงานวิชา</a></li>#}
+{#                <li><a class="dropdown-item" href="{% url 'delRegister' %}">ถอนรายวิชา</a></li>#}
+
+            </ul>
+        </ul>
+    </div>
+
+    <div class="col-2">
+        <div class="text-center te">
+{#            <a href="{% url 'userLogin' %}" class="btn rounded-3" style="background-color: #bfd1ec">#}
+            <i class="fas fa-user"></i><b>     LOGIN</b>
+            </a>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+{% load static %}
+{% load fontawesome_5 %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>base.html</title>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@200&display=swap" rel="stylesheet">
+    <link type="text/css" rel="stylesheet " href="{% static 'stylesheet/bt523/css/bootstrap.css' %}">
+    <script src="{% static 'stylesheet/bt523/js/bootstrap.bundle.js' %}"></script>
+</head>
+
+<body>
+<style type="text/css">
+    body {
+        font-family: 'Kanit', sans-serif;
+    }
+</style>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12 text-center" style="background-color: #8866CB">
+            {% include 'header.html' %}
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12" style="background-color: mediumpurple; ">
+            {% include 'navbar.html' %}
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        {% block content %}
+
+        {% endblock %}
+    </div>
+    <br>
+    <footer>
+        <div class="row" style="background-color: #8866CB">
+
+
+        <div class="list-group col-3">
+            <li class="list-group-item list-group-item-warning text-dark"><b>
+                <i class="fa fa-user-secret"></i> Administrator:</b></li>
+                <a href="admin" class="list-group-item list-group-item-action list-group-item-light text-dark" target="_blank">
+                <i class="fa fa-toolbox"></i> Admin App.</a>
+        </div>
+
+
+            {% include 'footer.html' %}
+        </div>
+    </footer>
+
+</div>
+</body>
+</html>

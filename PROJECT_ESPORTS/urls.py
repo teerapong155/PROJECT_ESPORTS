@@ -16,6 +16,14 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+from APP_ESPORTS import views
+
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('',views.base, name='base'),
+    path('raceType',views.typeList, name='raceType'),
+    path('director',views.director,name='director'),
+    path('newRaceType',views.newRaceType,name='newRaceType'),
+
+
 ]
