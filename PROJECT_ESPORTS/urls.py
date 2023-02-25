@@ -26,5 +26,7 @@ urlpatterns = [
     path('ageCategory',views.ageCategory, name='ageCategory'),
     path('newRaceType',views.newRaceType,name='newRaceType'),
     path('season', views.season,name='season'),
+    path('team', views.team,name='team'),
+    path('createTeam',views.createTeam,name='createTeam'),
 
 ]

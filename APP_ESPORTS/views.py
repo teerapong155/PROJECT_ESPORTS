@@ -29,6 +29,17 @@ def base(request):
 def newRaceType(request):
     return render(request,"CRUD/newRaceType.html")
 
+def team(request):
+    teamList = Team.objects.all().order_by()
+    context = {'teamList': teamList}
+    return render(request, "team.html", context)
+
+def createTeam(request):
+    createTeam = Team.objects.all().order_by()
+    context = {'createTeam': createTeam}
+    return render(request, "CRUD/createTeam.html", context)
+
+
 
 
 
