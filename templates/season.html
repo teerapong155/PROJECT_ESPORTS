@@ -2,24 +2,26 @@
 {% load static %}
 
 {% block content %}
-    <h1 class="text-primary">ฤดูกาล การแข่งขัน</h1>
-    <table class="table table-primary table-striped table-hover table-bordered">
-        <tr class="bg-white text-primary text-center">
+    <h1 class="text-dark">ฤดูกาล การแข่งขัน</h1>
+    <form style=" width: 80%; margin-left: 10%; ">
+    <table class="table table-bordered border-white text-center table-dark table-hover">
+        <tr class="bg-white text-white text-center">
             <th class="col col-3">ฤดูกาล</th>
-            <th class="col col-5">รายละเอียด </th>
-            <th class="col col-2">จัดการ <a href="{% url 'newRaceType' %}" class="btn btn-sm btn-primary"> <i class="fa fa-plus"></i> เพิ่ม </a></th>
+            <th class="col col-5">รายละเอียด</th>
+            <th class="col col-5">จัดการ</th>
         </tr>
-
     {% for season in sea %}
         <tr class="text-center">
             <td class="text-center">{{ season.name }}</td>
             <td>{{ season.desc }}</td>
             <td class="text-lg-center">
-                <a href="{% url 'director'  %}" class="btn btn-secondary"> <i class="fa fa-tools"> </i> </a>
-                <a href="{% url 'director' %}" class="btn btn-danger"> <i class="fa fa-trash"> </i> </a>
+                <a href="{% url 'newSeason' %}" class="btn btn-sm btn-primary"> <i class="fa fa-plus"></i></a>
+                <a href="{% url 'updateSeason'  season.id%}" class="btn btn-secondary"> <i class="fa fa-tools"> </i> </a>
+                <a href="{% url 'deleteSeason' season.id%}" class="btn btn-danger"> <i class="fa fa-trash"> </i> </a>
             </td>
         </tr>
     {% endfor %}
     </table>
+    </form>
     <br><br><br>
 {% endblock %}

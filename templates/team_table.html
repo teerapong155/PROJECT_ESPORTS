@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h4 class="text-center">ตารางทีมเข้าร่วมการแข่งขัน</h4> <br>
+    <form style=" width: 80%; margin-left: 10%; ">
+    <table class="table table-bordered border-white text-center table-dark table-hover">
+        <thead>
+        <tr>
+            <th scope="col">ชื่อทีม</th>
+            <th scope="col">คะแนน</th>
+            <th scope="col">VS</th>
+            <th scope="col">ชื่อทีม</th>
+            <th scope="col">คะแนน</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for team_table in teamVslist %}
+        <tr class="text-center">
+            <td><img src="{{ team_table.logo1 }}">{{ team_table.nameTeam1 }}</td>
+            <td>{{ team_table.score1 }}</td>
+            <td>VS</td>
+            <td><img src="{{ team_table.logo2 }}">{{ team_table.nameTeam2 }}</td>
+            <td>{{ team_table.score2 }}</td>
+        </tr>
+    {% endfor %}
+        </tbody>
+    </table>
+    </form>
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h1>UPDATE</h1>
+
+    <form method="POST" enctype="multipart/form-data" class="form form-control" style="background-color: #E22F89;">
+        {% csrf_token %}
+        <br>
+        <div class="row" style="margin-left:500px">
+            <div class="form-field font-monospace" style="width: 200px">
+                <label>ชื่อประเภท</label>{{ form.nameType }}
+            </div>
+            <div class="form-field" style="width: 300px">
+                <label class="font-monospace">เพศ</label>{{ form.gender }}
+            </div>
+        </div>
+        <br>
+        <p class="text-center">
+            <button type="button" class="btn btn-secondary" onclick="history.back()">กลับ
+            </button>
+            <button type="submit" class="btn btn-success">ยืนยัน
+            </button>
+        </p>
+    </form>
+{% endblock %}

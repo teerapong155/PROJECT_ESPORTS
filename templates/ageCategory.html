@@ -3,23 +3,25 @@
 
 {% block content %}
     <h1 class="text-primary">ประเภทอายุการแข่งขัน</h1>
-    <table class="table table-primary table-striped table-hover table-bordered">
-        <tr class="bg-white text-primary text-center">
+    <form style=" width: 80%; margin-left: 10%; ">
+    <table class="table table-bordered border-white text-center table-dark table-hover">
+        <tr class="bg-white text-white text-center">
             <th class="col col-3">ชื่อประเภท </th>
-            <th class="col col-5">เพศ </th>
-            <th class="col col-2">จัดการ<a href="{% url 'newRaceType' %}" class="btn btn-sm btn-primary"> <i class="fa fa-plus"></i> เพิ่ม </a></th>
+            <th class="col col-5">รายละเอียด </th>
+            <th class="col col-5">จัดการ</th>
         </tr>
-
     {% for ageCategory in age %}
         <tr class="text-center">
             <td class="text-center">{{ ageCategory.name }}</td>
             <td>{{ ageCategory.desc }}</td>
             <td class="text-lg-center">
-                <a href="{% url 'director'  %}" class="btn btn-secondary"> <i class="fa fa-tools"> </i> </a>
-                <a href="{% url 'director' %}" class="btn btn-danger"> <i class="fa fa-trash"> </i> </a>
+                <a href="{% url 'newAgeCategory' %}" class="btn btn-sm btn-primary"> <i class="fa fa-plus"></i></a>
+                <a href="{% url 'updateAgeCategory'  ageCategory.id%}" class="btn btn-secondary"> <i class="fa fa-tools"> </i> </a>
+                <a href="{% url 'deleteAgeCategory' ageCategory.id%}" class="btn btn-danger"> <i class="fa fa-trash"> </i> </a>
             </td>
         </tr>
     {% endfor %}
     </table>
+    </form>
     <br><br><br>
 {% endblock %}

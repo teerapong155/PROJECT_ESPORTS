@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% firstof request.user.get_full_name request.user.username %}
+
+<a href="{% url 'userlogout' %}">Logout</a>
+</body>
+</html>

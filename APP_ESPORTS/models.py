@@ -6,11 +6,6 @@ from django.db import models
 from django.utils import timezone
 from django.db.models import F, Sum, Count
 
-class Categories(models.Model):
-    name = models.CharField(max_length=50, default="")
-    desc = models.TextField(max_length=400, default="")
-    def __str__(self):
-        return str(self.id) + ":" + self.name
 
 class TypeList(models.Model): #ประเภทการแข่ง
     nameType = models.CharField(max_length=50, default="")
@@ -64,11 +59,21 @@ class Team(models.Model): #ฤดูกาล
     email4 = models.CharField(max_length=50, default="")
     email5 = models.CharField(max_length=50, default="")
     email6 = models.CharField(max_length=50, default="")
+    # def __str__(self):
+    #     return self.nameTeam + ":" \
+    #     # + self.logo + ":" + self.name1 + ":" + self.name2 + ":" + self.name3 + ":" + self.name4
+    #     # + ":" + self.name5 + ":" + self.name6 + ":" + self.player1 + ":" + self.player2 + ":" + self.player3 + \
+    #     # ":" + self.player4 + ":" + self.player5 + ":" + self.player6 + ":" + self.email1 + ":" + self.email2 + ":" + self.email3
+    #     # + ":" + self.email4 + ":" + self.email5 + ":" + self.email6
+
+
+class TeamVs(models.Model): #ฤดูกาล
+    nameTeam1 = models.CharField(max_length=50, default="")
+    nameTeam2 = models.CharField(max_length=50, default="")
+    score1 = models.CharField(max_length=50, default="")
+    score2 = models.CharField(max_length=50, default="")
+    logo1 = models.ImageField(upload_to='static/products/', default="")
+    logo2 = models.ImageField(upload_to='static/products/', default="")
+
     def __str__(self):
-        return self.nameTeam + ":" \
-        # + self.logo + ":" + self.name1 + ":" + self.name2 + ":" + self.name3 + ":" + self.name4
-        # + ":" + self.name5 + ":" + self.name6 + ":" + self.player1 + ":" + self.player2 + ":" + self.player3 + \
-        # ":" + self.player4 + ":" + self.player5 + ":" + self.player6 + ":" + self.email1 + ":" + self.email2 + ":" + self.email3
-        # + ":" + self.email4 + ":" + self.email5 + ":" + self.email6
-
-
+        return self.nameTeam1 + ":" + self.nameTeam2 + " : " + self.score1 + " : " + self.score2

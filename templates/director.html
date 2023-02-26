@@ -2,17 +2,17 @@
 {% load static %}
 
 {% block content %}
-    <h1 class="text-primary">ข้อมูลกรรมการ</h1>
-    <table class="table table-primary table-striped table-hover table-bordered">
-        <tr class="bg-white text-primary text-center">
+    <h1>ข้อมูลกรรมการ</h1>
+    <form style=" width: 80%; margin-left: 10%; ">
+    <table class="table table-bordered border-white text-center table-dark table-hover">
+        <tr class="bg-white text-white text-center">
             <th class="col col-2">ชื่อ </th>
-            <th class="col col-3">เพศ </th>
-            <th class="col col-5">วันเกิด </th>
-            <th class="col col-5">เบอร์โทร </th>
-            <th class="col col-5">ที่อยู่ </th>
-            <th class="col col-2"> จัดการ <a href="{% url 'newRaceType' %}" class="btn btn-sm btn-primary"><i class="fa fa-plus"></i> เพิ่ม </a></th>
+            <th class="col col-1">เพศ </th>
+            <th class="col col-2">วันเกิด </th>
+            <th class="col col-2">เบอร์โทร </th>
+            <th class="col col-3">ที่อยู่ </th>
+            <th class="col col-3">จัดการ</th>
         </tr>
-
     {% for director in direc %}
         <tr>
             <td class="text-center">{{ director.name }}</td>
@@ -21,11 +21,13 @@
             <td>{{ director.tel }}</td>
             <td>{{ director.address }}</td>
             <td class="text-lg-center">
-                <a href="{% url 'director'  %}" class="btn btn-secondary"> <i class="fa fa-tools"> </i> </a>
-                <a href="{% url 'director'  %}" class="btn btn-danger"> <i class="fa fa-trash"> </i> </a>
+                <a href="{% url 'newDirector' %}" class="btn btn-sm btn-primary"> <i class="fa fa-plus"></i></a>
+                <a href="{% url 'updateDirector'  director.id%}" class="btn btn-secondary"> <i class="fa fa-tools"> </i> </a>
+                <a href="{% url 'deleteDirector' director.id%}" class="btn btn-danger"> <i class="fa fa-trash"> </i> </a>
             </td>
         </tr>
     {% endfor %}
     </table>
+    </form>
     <br><br><br>
 {% endblock %}

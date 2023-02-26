@@ -1,13 +1,11 @@
-
 {% extends 'base.html' %}
 {% block content %}
-    <h1> ลงทะเบียนทีม </h1>
-    <br>
-    <form method="POST" enctype="multipart/form-data" class="form form-control" style="background-color: #E22F89;">
+    <h1>UPDATE </h1>
+        <form method="POST" enctype="multipart/form-data" class="form form-control" style="background-color: #E22F89;">
         {% csrf_token %}
         <div class="row" style="margin-left:300px">
-            <div class="form-field" style="width: 250px">
-                <label class="font-monospace">ชื่อทีม</label>{{ form.nameTeam }}
+            <div class="form-field font-monospace" style="width: 100px">
+                <label>ชื่อทีม</label>{{ form.nameTeam }}
             </div>
             <div class="form-field" style="width: 300px">
                 <label class="font-monospace">รูปโลโก้ทีม</label>{{ form.logo }}
@@ -81,8 +79,9 @@
         </div>
         <br>
         <p class="text-center">
-            <button type="submit" class="btn btn-hover btn-secondary">
-                 <i class="fa-solid fa-floppy-disk"></i> ลงทะเบียน
+            <button type="button" class="btn btn-secondary" onclick="history.back()"> กลับ
+            </button>
+            <button type="submit" class="btn btn-success">บันทึก
             </button>
         </p>
     </form>

@@ -2,22 +2,29 @@
 {% block content %}
     <h4 class="text-center">ตารางทีมเข้าร่วมการแข่งขัน</h4> <br>
     <form style=" width: 80%; margin-left: 10%; ">
-    <table class="table table-bordered border-dark text-center">
+    <table class="table table-bordered border-white text-center table-dark table-hover">
         <thead>
         <tr>
             <th scope="col" >ลำดับ</th>
             <th scope="col">ชื่อทีม</th>
-            <th scope="col">สมาชิก</th>
+            <th scope="col">ผู้ดูแลทีม</th>
+            <th scope="col"></th>
         </tr>
         </thead>
         <tbody>
         {% for team in teamList %}
         <tr class="text-center">
-            <td class="text-center "><img src="{{ team.logo }}"></td>
-            <td>{{ team.nameTeam }}</td>
+            <td class="text-center ">1</td>
+            <td><img src="{{ team.logo }}">{{ team.nameTeam }}</td>
             <td>{{ team.name1 }}</td>
+            <td>
+                <a href="{% url 'updateTeam'  team.id%}" class="btn btn-secondary"> <i class="fa fa-tools"> </i> </a>
+                <a href="{% url 'deleteTeam' team.id%}" class="btn btn-danger"> <i class="fa fa-trash"> </i> </a>
+            </td>
 
         </tr>
+
+
     {% endfor %}
         </tbody>
     </table>

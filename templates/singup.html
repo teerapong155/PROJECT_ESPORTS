@@ -1,0 +1,60 @@
+{% load static %}
+{% block content %}
+<h1>ลงทะเบียนเข้าแข่งขัน</h1>
+    <div class="tbl-header">
+        <form class="table-hover rounded-3" method="POST" enctype="multipart/form-data" style="background-color: #E22F89; color: black;">
+            {% csrf_token %}
+            <br>
+            <div class="row"  style="margin-left:20px">
+                <div class="col">
+                    <div class="form-group">
+                        <span class="form-label font-monospace">ยูสเซอร์</span>
+                        <input class="username" type="text" name="username">
+                    </div>
+                </div>
+        <br>
+            <div class="row"  style="margin-left:20px">
+                <div class="col-sm-4">
+                    <div class="form-group">
+                        <span class="form-label font-monospace">ชื่อ</span>
+                        <input type="text" name="fname">
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="form-group">
+                        <span class="form-label font-monospace">สกุล</span>
+                        <input type="text" name="lname">
+                    </div>
+                </div>
+                <div class="form-group">
+                        <span class="form-label font-monospace">อีเมล</span>
+                        <input type="email" name="email">
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        <span class="form-label font-monospace">พาสเวริด์</span>
+                        <input type="password" name="password">
+                    </div>
+                </div>
+            </div>
+         <br>
+            <div class="row"  style="margin-left:20px">
+                <div class="col-sm-4">
+                    <div class="form-group">
+                        <span class="form-label font-monospace">คอนพาสเวริด์</span>
+                        <input type="password" name="confrimpassword">
+                    </div>
+                </div>
+                </div>
+        <br>
+          <center>
+            <div class="form-btn">
+                <button class="btn btn-secondary" name="reg_team">ลงทะเบียน</button>
+            </div>
+          </center>
+        <br>
+        </form>
+    </div>
+
+{% endblock %}
