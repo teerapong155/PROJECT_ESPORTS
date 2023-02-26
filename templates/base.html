@@ -30,22 +30,14 @@
     </div>
     <br>
     <div class="row">
+{#        {% include 'team_table.html' %}#}
         {% block content %}
-
+            <img src="{% static 'images/bgindex.png' %}">
         {% endblock %}
     </div>
     <br>
     <footer>
         <div class="row" style="background-color: #5271FF">
-
-
-        <div class="list-group col-3">
-            <li class="list-group-item list-group-item-warning text-dark"><b>
-                <i class="fa fa-user-secret"></i> Administrator:</b></li>
-                <a href="admin" class="list-group-item list-group-item-action list-group-item-light text-dark" target="_blank">
-                <i class="fa fa-toolbox"></i> Admin App.</a>
-        </div>
-
 
             {% include 'footer.html' %}
         </div>

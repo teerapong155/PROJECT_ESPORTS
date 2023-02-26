@@ -1,14 +1,25 @@
+{% extends 'base.html' %}
 {% load static %}
 {% block content %}
-<h1>ลงทะเบียนเข้าแข่งขัน</h1>
-    <div class="tbl-header">
-        <form class="table-hover rounded-3" method="POST" enctype="multipart/form-data" style="background-color: #E22F89; color: black;">
-            {% csrf_token %}
-            <input type="text" name="username"  required><br>
-            <input type="password" name="password" required>
-
-            <button type="submit">SINGIN</button>
-        </form>
-    </div>
+<h1>Login</h1>
+    <form method="POST" enctype="multipart/form-data" class="form form-control" style="background-color: #E22F89;">
+        {% csrf_token %}
+        <br>
+        <div class="row" style="margin-left:450px">
+            <div class="form-field font-monospace" style="width: 300px">
+                <label>User</label>
+                <input type="text" name="username" required>
+            </div>
+            <div class="form-field" style="width: 300px">
+                <label class="font-monospace">Password</label>
+                <input type="password" name="password" required>
+            </div>
+        </div>
+        <br>
+        <p class="text-center">
+            <button class="btn btn-primary" type="submit">Login</button>
+            <a href="{% url 'singup' %}" class="btn btn-primary">SIGNUP</a>
+        </p>
+    </form>
 
 {% endblock %}

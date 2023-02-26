@@ -26,6 +26,7 @@ urlpatterns = [
     path('createTeam',views.createTeam,name='createTeam'),
     path('team',views.team,name='team'),
     path('team_table',views.team_table,name='team_table'),
+    path('teamNew', views.teamNew, name='teamNew'),
     path('singup',views.signup,name='singup'),
     path('singin', views.signin, name='signin'),
     path('userlogout', views.userlogout, name='userlogout'),

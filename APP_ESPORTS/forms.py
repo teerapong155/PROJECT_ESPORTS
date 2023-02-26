@@ -1,6 +1,6 @@
 from django import forms
 from APP_ESPORTS.models import *
-class RaceTypeForm(forms.ModelForm):
+class RaceTypeForm(forms.ModelForm): #เพศ
     class Meta:
         gender = (
             ('ชาย', 'ชาย'), ('หญิง', 'หญิง'))
@@ -72,7 +72,7 @@ class AgeCategoryForm(forms.ModelForm):  # ประเภทอายุแข�
         self.fields['desc'].widget.attrs['readonly'] = True
 
 
-class SeasonForm(forms.ModelForm):  # ประเภทอายุแข่ง
+class SeasonForm(forms.ModelForm):  # ฤดูกาล
     class Meta:
         model = Season
         fields = ('name', 'desc')
@@ -89,7 +89,7 @@ class SeasonForm(forms.ModelForm):  # ประเภทอายุแข่ง
         self.fields['name'].widget.attrs['readonly'] = True
         self.fields['desc'].widget.attrs['readonly'] = True
 
-class TeamFrom(forms.ModelForm):
+class TeamFrom(forms.ModelForm): #สร้างทีม
     class Meta:
         model = Team
         fields = ('nameTeam', 'logo','name1','name2','name3','name4','name5','name6'
@@ -111,12 +111,12 @@ class TeamFrom(forms.ModelForm):
             'player4': forms.TextInput(attrs={'class': 'form-control', 'size': 55, 'maxlength': 50}),
             'player5': forms.TextInput(attrs={'class': 'form-control', 'size': 55, 'maxlength': 50}),
             'player6': forms.TextInput(attrs={'class': 'form-control', 'size': 55, 'maxlength': 50}),
-            'email1': forms.TextInput(attrs={'class': 'form-control', 'size': 55, 'maxlength': 50}),
-            'email2': forms.TextInput(attrs={'class': 'form-control', 'size': 55, 'maxlength': 50}),
-            'email3': forms.TextInput(attrs={'class': 'form-control', 'size': 55, 'maxlength': 50}),
-            'email4': forms.TextInput(attrs={'class': 'form-control', 'size': 55, 'maxlength': 50}),
-            'email5': forms.TextInput(attrs={'class': 'form-control', 'size': 55, 'maxlength': 50}),
-            'email6': forms.TextInput(attrs={'class': 'form-control', 'size': 55, 'maxlength': 50}),
+            'email1': forms.EmailInput(attrs={'class': 'form-control', 'size': 55, 'maxlength': 50}),
+            'email2': forms.EmailInput(attrs={'class': 'form-control', 'size': 55, 'maxlength': 50}),
+            'email3': forms.EmailInput(attrs={'class': 'form-control', 'size': 55, 'maxlength': 50}),
+            'email4': forms.EmailInput(attrs={'class': 'form-control', 'size': 55, 'maxlength': 50}),
+            'email5': forms.EmailInput(attrs={'class': 'form-control', 'size': 55, 'maxlength': 50}),
+            'email6': forms.EmailInput(attrs={'class': 'form-control', 'size': 55, 'maxlength': 50}),
 
         }
         labels = {
@@ -146,23 +146,23 @@ class TeamFrom(forms.ModelForm):
         self.fields['name1'].widget.attrs['readonly'] = True
 
 
-# class TeamVs(forms.ModelForm): #ประเภทอายุแข่ง
-#     class Meta:
-#         model = TeamVs
-#         fields = ('nameTeam1', 'nameTeam2','score1','score2','logo1','logo2')
-#         widgets = {
-#             'nameTeam1': forms.TextInput(attrs={'class': 'form-control',  'size':55, 'maxlength':50}),
-#             'nameTeam2': forms.TextInput(attrs={'class': 'form-control', 'size': 55, 'maxlength': 50}),
-#             'score1': forms.TextInput(attrs={'class': 'form-control',  'size':55, 'maxlength':50}),
-#             'score2': forms.TextInput(attrs={'class': 'form-control', 'size': 55, 'maxlength': 50}),
-#             'logo1': forms.FileInput(attrs={'class': 'form-control', 'accept': 'image/*'}),
-#             'logo2': forms.FileInput(attrs={'class': 'form-control', 'accept': 'image/*'}),
-#         }
-#         labels = {
-#             'nameTeam1': 'ชื่อทีมที่ 1 ',
-#             'nameTeam1': 'ชื่อทีมที่ 2',
-#             'score1': 'คะแนนทีมที่ 1',
-#             'score2': 'คะแนนทีมที่ 2',
-#             'logo1': 'logo 1',
-#             'logo1': 'logo 2',
-#         }
+class TeamVs(forms.ModelForm): #ตารางการแข่งขัน
+    class Meta:
+        model = TeamVs
+        fields = ('nameTeam1', 'nameTeam2','score1','score2','logo1','logo2')
+        widgets = {
+            'nameTeam1': forms.TextInput(attrs={'class': 'form-control',  'size':55, 'maxlength':50}),
+            'nameTeam2': forms.TextInput(attrs={'class': 'form-control', 'size': 55, 'maxlength': 50}),
+            'score1': forms.TextInput(attrs={'class': 'form-control',  'size':55, 'maxlength':50}),
+            'score2': forms.TextInput(attrs={'class': 'form-control', 'size': 55, 'maxlength': 50}),
+            'logo1': forms.FileInput(attrs={'class': 'form-control', 'accept': 'image/*'}),
+            'logo2': forms.FileInput(attrs={'class': 'form-control', 'accept': 'image/*'}),
+        }
+        labels = {
+            'nameTeam1': 'ชื่อทีมที่ 1 ',
+            'nameTeam1': 'ชื่อทีมที่ 2',
+            'score1': 'คะแนนทีมที่ 1',
+            'score2': 'คะแนนทีมที่ 2',
+            'logo1': 'logo 1',
+            'logo1': 'logo 2',
+        }

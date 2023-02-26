@@ -37,22 +37,22 @@ from django.contrib.auth.decorators import login_required
 #     context = {'teamList': teamList}
 #     return render(request, "team.html", context)
 #
-# def createTeam(request):
-#     if request.method == 'POST':
-#         form = TeamFrom(data=request.POST, files=request.FILES)
-#         if form.is_valid():
-#             form.save()
-#             return redirect('team')
-#         else:
-#             context = {'form': form}
-#             return render(request, 'CRUD/createTeam.html', context)
-#     else:
-#         form = TeamFrom()
-#         context = {'form': form}
-#         return render(request, 'CRUD/createTeam.html', context)
-#
-# def form_team(request):
-#     return render(request,"form_team.html")
+def createTeam(request):
+    if request.method == 'POST':
+        form = TeamFrom(data=request.POST, files=request.FILES)
+        if form.is_valid():
+            form.save()
+            return redirect('team')
+        else:
+            context = {'form': form}
+            return render(request, 'CRUD/createTeam.html', context)
+    else:
+        form = TeamFrom()
+        context = {'form': form}
+        return render(request, 'CRUD/createTeam.html', context)
+
+def form_team(request):
+    return render(request,"form_team.html")
 
 
 #AGE CATE GORY
@@ -247,19 +247,20 @@ def team_table(request):
     context = {'teamVslist': teamVslist}
     return render(request, "team_table.html", context)
 
-def createTeam(request):
-    if request.method == 'POST':
-        form = TeamFrom(data=request.POST, files=request.FILES)
-        if form.is_valid():
-            form.save()
-            return redirect('team')
-        else:
-            context = {'form': form}
-            return render(request, 'CRUD/createTeam.html', context)
-    else:
-        form = TeamFrom()
-        context = {'form': form}
-        return render(request, 'CRUD/createTeam.html', context)
+
+# def createTeam(request):
+#     if request.method == 'POST':
+#         form = TeamFrom(data=request.POST, files=request.FILES)
+#         if form.is_valid():
+#             form.save()
+#             return redirect('team')
+#         else:
+#             context = {'form': form}
+#             return render(request, 'CRUD/createTeam.html', context)
+#     else:
+#         form = TeamFrom()
+#         context = {'form': form}
+#         return render(request, 'CRUD/createTeam.html', context)
 
 def updateTeam(request, id):
     teams = get_object_or_404(Team, id = id)
@@ -293,14 +294,14 @@ def signup(request):
         lname = request.POST['lname']
         email = request.POST['email']
         password = request.POST['password']
-        confrimpassword = request.POST['confrimpassword']
-        if confrimpassword == password:
+        confirmpassword = request.POST['confirmpassword']
+        if confirmpassword == password:
             user = User.objects.create_user(username, email, password)
             user.first_name = fname
             user.last_name = lname
             user.save()
             user.is_staff = False
-            return redirect('base')
+            return redirect('signin')
         else:
             return render(request,'singup.html')
     else:
@@ -315,7 +316,7 @@ def signin(request):
         if user is not None:
             login(request, user)
             fname = user.first_name
-            return render(request, 'test.html', {'fname': fname})
+            return render(request, 'team.html', {'fname': fname})
         else:
             messages.error(request, "BAD")
             return redirect('signin')
@@ -329,3 +330,7 @@ def userlogout(request):
     return redirect('base')
 
 
+def teamNew(request):
+    teamList1 = Team.objects.all().order_by()
+    context = {'teamList1': teamList1}
+    return render(request, "teamNew.html", context)
